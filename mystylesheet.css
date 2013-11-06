@@ -73,29 +73,29 @@ div.mainContent{
 	margin: 0 auto;
 }
 
-div.imageScroll{
+#imageScroll{
 	overflow: auto;
 	
 }
 
-div.imageScroll img{
+#imageScroll img{
 	height: 150px;
 	width: 150px;
 }
 
-div.imageScroll div{
+#imageScroll div{
 	width: 150px;
 	display: inline-block;
 	padding: 30px 30px;
 }
 
-div.imageScroll img.thumbdn{
+#imageScroll img.thumbdn{
 	height: 30px;
 	width: 30px;
 	float: right;
 	cursor: pointer;
 }
-div.imageScroll img.thumbup{
+#imageScroll img.thumbup{
 	height: 30px;
 	width: 30px;
 	float: left;
