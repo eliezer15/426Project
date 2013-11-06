@@ -13,7 +13,7 @@ div.main{
 div.logo{
 	display: block;
 	width: 100%;
-	height: 230px;
+	height: 130px;
 }
 
 div.logo h1 {
@@ -22,7 +22,7 @@ div.logo h1 {
 	text-align: center;
 	font-style: bold;
 	font-family: Georgia;
-	font-size: 400%;
+	font-size: 250%;
 	color: #FFFFFF
 
 }
@@ -77,9 +77,7 @@ div.mainContent{
 }
 
 div.imageScroll{
-	width: 100%;
-	height: 500px;
-    overflow: auto;
+	overflow: auto;
     border: thin solid black;
 	float: left;
     position: relative;
@@ -87,15 +85,27 @@ div.imageScroll{
 }
 
 div.imageScroll img{
-	height: 250px;
-	width: 250px;
+	height: 150px;
+	width: 150px;
 }
 
 div.imageScroll div{
-	padding-top: 30px;
-	padding-left: 140px;
-	float:left;
-	margin: 0px 0px;
+	width: 150px;
+	display: inline-block;
+	padding: 30px 30px;
+}
+
+div.imageScroll img.thumbdn{
+	height: 30px;
+	width: 30px;
+	float: right;
+	cursor: pointer;
+}
+div.imageScroll img.thumbup{
+	height: 30px;
+	width: 30px;
+	float: left;
+	cursor: pointer;
 }
 
 .comments {
@@ -107,6 +117,7 @@ div.imageScroll div{
 	color: #FFFFFF;
 	font-size: 1em;
 	padding: 5px;
+}
 	
 
 div.thumbsup{
