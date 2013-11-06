@@ -7,7 +7,6 @@ body{
 div.main{
 		width:100%;
 		height: auto;
-		padding: 0px 0px 32px;
 }
 
 div.logo{
@@ -32,7 +31,6 @@ div.header{
 	width: 100%;
 	height: 78px;
 	background-color: #2d281d;
-	margin: 0px
 
 }
 
@@ -71,17 +69,13 @@ div.menu a:hover, a:active {
 }
 
 div.mainContent{
-	float: left;
-    position: relative;
-    left: 50%;
+ width: 70%;
+	margin: 0 auto;
 }
 
 div.imageScroll{
 	overflow: auto;
-    border: thin solid black;
-	float: left;
-    position: relative;
-    left: -50%;
+	
 }
 
 div.imageScroll img{

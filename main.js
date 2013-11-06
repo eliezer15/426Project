@@ -2,6 +2,6 @@
 
 
 $(document).ready(function() {
-	alert("Javascript ready");
+	var itemList = $('#itemList');
 	
 	});
