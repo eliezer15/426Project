@@ -3,6 +3,7 @@
 body{
 	background-color: #272219;
 	margin:0px;
+	color: white;
 }
 div.main{
 		width:100%;
@@ -22,7 +23,7 @@ div.logo h1 {
 	font-style: bold;
 	font-family: Georgia;
 	font-size: 250%;
-	color: #FFFFFF
+	color: #FFFFFF;
 
 }
 
