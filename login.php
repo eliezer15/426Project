@@ -32,6 +32,7 @@ if (mysqli_connect_errno($con))
 	</div><!-- Menu-->
 </div><!--Header -->
 <div class="mainContent">
+<div class="login_wrapper">
 <div class="login">
 <?php
 if(isset($_COOKIE['user'])){
@@ -43,7 +44,7 @@ echo '
 <p><input type="text" name="login" value="" placeholder="Username"></p>
 <p><input type="password" name="password" value="" placeholder="Password"></p>
 <p class="submit"><input type="submit" name="commit" value="Login"></p>
-</form> ';
+</form> </div>';
 
 if(empty($_POST["login"])){
 echo "Username Required";
@@ -59,10 +60,15 @@ if (mysqli_num_rows($result) == 0) {
 } else{
 $row = mysqli_fetch_array($result);
 if($row['password'] == $password){
-echo 'Login Succesful';
+?>
+<script type="text/javascript">
+$('.login').remove();
+</script>
+<?php
+echo '<p>Login Succesful. You will be redirected back shortly...</p>';
 setcookie("user", $row['first'], 0);
 setcookie("username", $row['login'], 0);
-header( "refresh:0;url=login.php" );
+header( "refresh:3;url=index.php" );
 } else{
 echo 'Incorrect Password';
 }

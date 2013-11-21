@@ -13,7 +13,7 @@ div.main{
 div.logo{
 	display: block;
 	width: 100%;
-	height: 130px;
+	height: 70px;
 }
 
 div.logo h1 {
@@ -22,7 +22,7 @@ div.logo h1 {
 	text-align: center;
 	font-style: bold;
 	font-family: Georgia;
-	font-size: 250%;
+	font-size: 200%;
 	color: #FFFFFF;
 
 }
