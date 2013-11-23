@@ -15,7 +15,7 @@ $con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb"
 if (mysqli_connect_errno($con))
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  } 
 ?>
 <div class="main">
 <p> Welcome, <?php if (isset($_COOKIE['user'])){echo $_COOKIE['user']; echo '! <a href="logout.php">click here to logout</a>';} else echo 'Guest <a href="login.php">login</a>!'; ?></p>
@@ -36,7 +36,7 @@ if (mysqli_connect_errno($con))
 <?php
 if(isset($_COOKIE["user"])){
 if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file']['tmp_name'])) {
- echo '<p>File types allowed : gif, jpeg, jpg, png. Max size: 2048 kB</p>';
+ echo '<p>File types allowed : gif, jpeg, jpg, png. Max size: 900 kB</p>';
 echo '
 <form action="upload.php" method="post"
 enctype="multipart/form-data">
@@ -54,7 +54,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/pjpeg")
 || ($_FILES["file"]["type"] == "image/x-png")
 || ($_FILES["file"]["type"] == "image/png"))
-&& ($_FILES["file"]["size"] < 2000000)
+&& ($_FILES["file"]["size"] < 900000)
 && in_array($extension, $allowedExts))
   {
   if ($_FILES["file"]["error"] > 0)
@@ -76,6 +76,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "upload/" . $_FILES["file"]["name"]);
+	  
       echo "Uploaded in: " . "upload/" . $_FILES["file"]["name"];
       }
     }
