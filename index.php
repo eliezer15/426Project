@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="mystylesheet.css">
-	<script src="jquery-1.10.2.js"></script>
-	<script src="main.js"></script>
-	<script src="imageObj.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
+<link href="css/lightbox.css" rel="stylesheet" />
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/lightbox-2.6.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/imageObj.js"></script>
 <title>UNC Images</title>
 </head>
 <body>
@@ -35,7 +37,7 @@ if (mysqli_connect_errno($con))
 </div><!--Header -->
 <div class="mainContent">
 	<div id="imageScroll">
-		<div class="pic1"><img src="images/photo1.jpg">
+		<div class="pic1"><a href="images/photo1.jpg" data-lightbox="image-1" title="My caption"><img src="images/photo1.jpg"></a>
 		<br><img class ="thumbup" src="images/thumbup.png"><img class ="thumbdn" src="images/thumbdown.png">
 		</div>
 	</div><!-- imageScroll -->

@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="mystylesheet.css">
-	<script src="jquery-1.10.2.js"></script>
-	<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/main.js"></script>
 <title>Register</title>
 </head>
 <body>
