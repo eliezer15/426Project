@@ -1,9 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
+
 body{
-	background-color: #272219;
+	background-color: #eceeef;
 	margin:0px;
-	color: white;
+	color: black;
 }
 div.main{
 		width:100%;
@@ -15,7 +16,9 @@ div.logo{
 	width: 100%;
 	height: 70px;
 }
-
+h1{
+color: #114b7c;
+}
 div.logo h1 {
 	display: block;
 	padding: 1em;
@@ -23,7 +26,6 @@ div.logo h1 {
 	font-style: bold;
 	font-family: Georgia;
 	font-size: 200%;
-	color: #FFFFFF;
 
 }
 
@@ -31,7 +33,7 @@ div.header{
 	display: block;
 	width: 100%;
 	height: 78px;
-	background-color: #2d281d;
+	background-color: #4a95cb;
 
 }
 
@@ -70,12 +72,13 @@ div.menu a:hover, a:active {
 }
 
 div.mainContent{
- width: 70%;
+	width: 70%;
 	margin: 0 auto;
 }
 
 #imageScroll{
 	overflow: auto;
+	background-color: white;
 	
 }
 
@@ -127,5 +130,15 @@ div.thumbsdown{
 }
 
 #register {
-float: right;
+padding-right:100px;
+margin-left:0px;
 }
+
+div.head{
+ position: fixed;
+    top: 0;
+	width: 100%;
+	margin-left:100px;
+}
+
+
