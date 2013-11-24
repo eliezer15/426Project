@@ -10,6 +10,14 @@ div.main{
 		width:100%;
 		height: auto;
 }
+a:link {color:#2376a1;
+text-decoration: none;
+}      /* unvisited link */
+a:visited {color:#2376a1;}  /* visited link */
+a:hover {color:#2376a1;
+text-decoration: underline;
+;}  /* mouse over link */
+a:active {color:#2376a1;}  /* selected link */ 
 
 div.logo{
 	display: block;
@@ -38,36 +46,44 @@ div.header{
 }
 
 div.menu{
-	width: 50%;
+	width: 100%;
 	margin: 0px auto;
+	height: 78px;
 
 }
 
 div.menu ul{
-	padding-left: 150px;
 	display: block;
-	padding-top: 20px;
 	list-style-type: none;
+	height: 78px;
+	text-align: center;
 
 }
 div.menu ul li{
 	display: inline;
-	padding-left: 20px;
 	font-size: 25px;
 	color: white;
+	
+}
+
+div.menu a{
+display: inline-block;
+height: 76px;
+width: 100px;
+text-align: center;
+line-height: 78px;
+
 }
 
 div.menu a:link, a:visited {
 	font-weight: bold;
     color: #FFFFFF;
-	width: 120px;
 	text-align:center;
-	padding:4px;
 	text-decoration:none;
 }
 
 div.menu a:hover, a:active {
-	color:#8F4700
+	border-bottom:thick solid white;
 
 }
 
