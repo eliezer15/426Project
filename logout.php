@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
-	<script src="js/jquery-1.10.2.js"></script>
-<title>Logout</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><title>Logout</title>
 </head>
 <body>
 <?php
+session_start();
 // Create connection
 $con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
 
@@ -18,36 +18,26 @@ if (mysqli_connect_errno($con))
   }
 ?>
 <div class="main">
-<p> Welcome, <?php if (isset($_COOKIE['user'])){echo $_COOKIE['user']; echo '! <a href="logout.php">click here to logout</a>';} else echo 'Guest <a href="login.php">login</a>!'; ?></p>
-	<div class="logo">
-		<h1> Tar Heel Gallery </h1>
-	</div><!-- logo place holder -->
-<div class = "header">
-    <div class ="menu">
-    	<ul>
-    	<li><a href="index.php">Home</a></li>
-    	<li><a href="about.php">About</a></li>
-    	<li><a href="">Galleries</a></li>
-    	</ul>
-	</div><!-- Menu-->
-</div><!--Header -->
+<?php include("header.php"); ?>
 <div class="mainContent">
 <div class="login">
 
 <?php
-if(isset($_COOKIE['user'])){
+if(isset($_SESSION['user'])){
 echo '<h1>Logging out .... </h1>';
-unset($_COOKIE['user']);
-setcookie('user', '', time() - 3600); // empty value and old timestamp
-if(isset($_COOKIE['username'])){
-unset($_COOKIE['username']);
-  setcookie('username', '', time() - 3600); // empty value and old timestamp
+unset($_SESSION['user']);
+
+if(isset($_SESSION['username'])){
+unset($_SESSION['username']);
+}
+if(isset($_SESSION['login'])){
+unset($_SESSION['login']);
 }
 // wait 5 seconds and redirect :)
-echo "<meta http-equiv=\"refresh\" content=\"5;url=".$_SERVER['HTTP_REFERER']."\"/>";
+header( "refresh:3;url=".$_SERVER['HTTP_REFERER']);
 } else{
 echo '<h1>Already logged out</h1>';
-echo "<meta http-equiv=\"refresh\" content=\"5;url=".$_SERVER['HTTP_REFERER']."\"/>";
+header( "refresh:3;url=".$_SERVER['HTTP_REFERER']);
 }
 ?>
 </div> <!--login-->

@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
-	<script src="js/jquery-1.10.2.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	<script src="js/jquery-1.10.2.js"></script>
 <title>Upload</title>
 </head>
 <body>
 <?php
+session_start();
 // Create connection
 $con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
 
@@ -18,23 +19,11 @@ if (mysqli_connect_errno($con))
   } 
 ?>
 <div class="main">
-<p> Welcome, <?php if (isset($_COOKIE['user'])){echo $_COOKIE['user']; echo '! <a href="logout.php">click here to logout</a>';} else echo 'Guest <a href="login.php">login</a>!'; ?></p>
-	<div class="logo">
-		<h1> Tar Heel Gallery </h1>
-	</div><!-- logo place holder -->
-<div class = "header">
-    <div class ="menu">
-    	<ul>
-    	<li><a href="index.php">Home</a></li>
-    	<li><a href="about.php">About</a></li>
-    	<li><a href="">Galleries</a></li>
-    	</ul>
-	</div><!-- Menu-->
-</div><!--Header -->
+<?php include("header.php"); ?>
 <div class="mainContent">
 <div class="upload">
 <?php
-if(isset($_COOKIE["user"])){
+if(isset($_SESSION["user"])){
 if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file']['tmp_name'])) {
  echo '<p>File types allowed : gif, jpeg, jpg, png. Max size: 900 kB</p>';
 echo '
@@ -78,6 +67,8 @@ if ((($_FILES["file"]["type"] == "image/gif")
       "upload/" . $_FILES["file"]["name"]);
 	  
       echo "Uploaded in: " . "upload/" . $_FILES["file"]["name"];
+	  $uploadir = "upload/" . $_FILES["file"]["name"];
+	  
       }
     }
   }

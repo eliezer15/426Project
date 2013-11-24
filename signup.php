@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
-	<script src="js/jquery-1.10.2.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/main.js"></script>
 <title>Register</title>
 </head>
 <body>
 <?php
+session_start();
 // Create connection
 $con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
 
@@ -19,25 +20,13 @@ if (mysqli_connect_errno($con))
   }
 ?>
 <div class="main">
-<p> Welcome, <?php if (isset($_COOKIE['user'])){echo $_COOKIE['user']; echo '! <a href="logout.php">click here to logout</a>';} else echo 'Guest <a href="login.php">login</a>!'; ?></p>
-	<div class="logo">
-		<h1> Tar Heel Gallery </h1>
-	</div><!-- logo place holder -->
-<div class = "header">
-    <div class ="menu">
-    	<ul>
-    	<li><a href="index.php">Home</a></li>
-    	<li><a href="about.php">About</a></li>
-    	<li><a href="">Galleries</a></li>
-    	</ul>
-	</div><!-- Menu-->
-</div><!--Header -->
+<?php include("header.php"); ?>
 <div class="mainContent">
 <div class="signup_wrapper">
 <div class="signup">
 <?php
-if(isset($_COOKIE['user'])){
-echo "<h3> You are already logged in as, " . $_COOKIE['username'] . "</h3>";
+if(isset($_SESSION['user'])){
+echo "<h3> You are already logged in as, " . $_SESSION['username'] . "</h3>";
 } else{
 echo '
 <h1>Signup to Tar Heel Gallery</h1>
@@ -80,8 +69,9 @@ $('.signup').remove();
 <?php
   echo "<p>Registration Succesful</p>";
   echo "<p>You will be automatically logged in and refered back to the homepage</p>";
-  setcookie("user", $first, 0);
-  setcookie("username", $username, 0);
+  $_SESSION['user'] =  $row['first'];
+  $_SESSION['username'] = $row['login'];
+  $_SESSION['login'] = "true";
   header( "refresh:3;url=index.php" );
   
 } else{
