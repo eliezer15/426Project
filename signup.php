@@ -48,11 +48,11 @@ echo "<p>Password Required</p>";
 } else if (empty($_POST["email"])){
 echo "<p>Email Required</p>";
 } else{
-$first = $_POST["first"];
-$last = $_POST["last"];
-$username = $_POST["login"];
-$password = $_POST["password"];
-$email = $_POST["email"];
+$first = mysqli_real_escape_string($con,$_POST["first"]);
+$last = mysqli_real_escape_string($con,$_POST["last"]);
+$username = mysqli_real_escape_string($con,$_POST["login"]);
+$password = mysqli_real_escape_string($con,$_POST["password"]);
+$email = mysqli_real_escape_string($con,$_POST["email"]);
 $day = date("Y-m-d");
 $result = mysqli_query($con,"SELECT * FROM User WHERE login = '". $username ."' ");
 if (mysqli_num_rows($result) == 0) {
@@ -72,6 +72,8 @@ $('.signup').remove();
   $_SESSION['user'] =  $row['first'];
   $_SESSION['username'] = $row['login'];
   $_SESSION['login'] = "true";
+  $_SESSION['id'] = $row['id'];
+  
   header( "refresh:3;url=index.php" );
   
 } else{

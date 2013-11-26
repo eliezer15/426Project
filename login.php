@@ -57,6 +57,7 @@ echo '<p>Login Succesful. You will be redirected back shortly...</p>';
 $_SESSION['user'] =  $row['first'];
 $_SESSION['username'] = $row['login'];
 $_SESSION['login'] = "true";
+$_SESSION['id'] = $row['id'];
 header( "refresh:3;url=index.php" );
 } else{
 echo 'Incorrect Password';

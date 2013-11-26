@@ -29,11 +29,15 @@ if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file'
 echo '
 <form action="upload.php" method="post"
 enctype="multipart/form-data">
-<label for="file">Filename:</label>
+<p><label for="title">Title:</label><br><input type="text" name="title" value="" placeholder="title"></p>
+<p><label for="desc">Description (250 char limit) : <br> </label><textarea  name="desc" maxlength="1000" cols="25" rows="6"></textarea></p>
+<label for="file">Filename:</label><br>
 <input type="file" name="file" id="file"><br>
 <input type="submit" name="submit" value="Submit">
 </form> ';
 } else{
+$title = mysqli_real_escape_string($con,$_POST["title"]);
+$desc = mysqli_real_escape_string($con,$_POST["desc"]);
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -66,8 +70,20 @@ if ((($_FILES["file"]["type"] == "image/gif")
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "upload/" . $_FILES["file"]["name"]);
 	  
-      echo "Uploaded in: " . "upload/" . $_FILES["file"]["name"];
-	  $uploadir = "upload/" . $_FILES["file"]["name"];
+      echo "Your file has been uploaded";
+	  $day = date("Y-m-d");
+	  $user = $_SESSION['id'];
+	  $uploaddir = "upload/" . $_FILES["file"]["name"];
+	  $sql = "INSERT INTO Picture (id,path, uploaded, title, description, upvotes, downvotes, author,ProfilePic)
+		VALUES ('null','$uploaddir', '$day', '$title','$desc', 0, 0, '$user', 0)";
+		if (!mysqli_query($con,$sql))
+  {
+  echo "MYSQL error";
+  }
+	echo "<br><p>Title:" . $title."</p>";
+	echo "<p>Description:" . $desc."</p>";
+	echo '<p><img alt="uploaded img" src="'.$uploaddir.'"></p>';
+	
 	  
       }
     }

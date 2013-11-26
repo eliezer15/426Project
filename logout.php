@@ -33,6 +33,10 @@ unset($_SESSION['username']);
 if(isset($_SESSION['login'])){
 unset($_SESSION['login']);
 }
+if(isset($_SESSION['id'])){
+unset($_SESSION['id']);
+}
+session_destroy();
 // wait 5 seconds and redirect :)
 header( "refresh:3;url=".$_SERVER['HTTP_REFERER']);
 } else{
