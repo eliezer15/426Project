@@ -125,7 +125,16 @@ div.mainContent{
 	width: 150px;
 	display: inline-block;
 	padding: 30px 30px;
+	background-color: #eeeeee;
+	-moz-border-radius: 15px;
+border-radius: 15px;
+margin: 30px;
+margin-right: auto;
 	
+}
+
+#imageScroll div:hover{
+background-color: #d6d6d6;
 }
 
 #imageScroll img.thumbdn{
@@ -133,12 +142,15 @@ div.mainContent{
 	width: 30px;
 	float: right;
 	cursor: pointer;
+	margin: 10px;
 }
 #imageScroll img.thumbup{
 	height: 30px;
 	width: 30px;
 	float: left;
 	cursor: pointer;
+	margin: 10px;
+	margin-top: 5px;
 }
 
 .comments {

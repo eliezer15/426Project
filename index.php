@@ -12,22 +12,11 @@
 <body>
 <?php
 session_start();
-// Create connection
-$con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
-
-// Check connection
-if (mysqli_connect_errno($con))
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
 ?>
 <div class="main">
 <?php include("header.php"); ?>
 <div class="mainContent">
 	<div id="imageScroll">
-		<div class="pic1"><a href="images/photo1.jpg" data-lightbox="image-1" title="My caption"><img src="images/photo1.jpg"></a>
-		<br><img class ="thumbup" src="images/thumbup.png"><img class ="thumbdn" src="images/thumbdown.png">
-		</div>
 	</div><!-- imageScroll -->
 </div><!--mainContent-->
 <div class="footer">

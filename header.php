@@ -8,12 +8,8 @@
 <li><a href="index.php">Home</a></li>
 <li><a href="">About</a></li>
 <li><a href="">Galleries</a></li>
-<?php
-if (isset($_SESSION['user'])) {
-echo '<li><a href="upload.php">Upload</a></li>';
-echo '<li><a href="">Settings</a></li>';
-}
-?>
+<li><a href="upload.php">Upload</a></li>
+<li><a href="">Settings</a></li>
 </ul>
 	</div><!-- Menu-->
 </div><!--Header -->
