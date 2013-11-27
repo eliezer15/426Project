@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 // Create connection
 $con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
 
