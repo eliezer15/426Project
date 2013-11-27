@@ -19,7 +19,7 @@ if (mysqli_connect_errno($con))
   } 
 ?>
 <div class="main">
-<?php include("header.php"); ?>
+<?php include("scripts/header.php"); ?>
 <div class="mainContent">
 <div class="upload">
 <?php
@@ -72,7 +72,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 	  
       echo "Your file has been uploaded";
 	  $day = date("Y-m-d");
-	  $user = $_SESSION['id'];
+	  $user = $_SESSION['username'];
 	  $uploaddir = "upload/" . $_FILES["file"]["name"];
 	  $sql = "INSERT INTO Picture (id,path, uploaded, title, description, upvotes, downvotes, author,ProfilePic)
 		VALUES ('null','$uploaddir', '$day', '$title','$desc', 0, 0, '$user', 0)";

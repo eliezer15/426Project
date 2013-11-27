@@ -18,7 +18,7 @@ if (mysqli_connect_errno($con))
   }
 ?>
 <div class="main">
-<?php include("header.php"); ?>
+<?php include("scripts/header.php"); ?>
 <div class="mainContent">
 <div class="login">
 

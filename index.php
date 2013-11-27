@@ -14,7 +14,7 @@
 session_start();
 ?>
 <div class="main">
-<?php include("header.php"); ?>
+<?php include("scripts/header.php"); ?>
 <div class="mainContent">
 	<div id="imageScroll">
 	</div><!-- imageScroll -->
