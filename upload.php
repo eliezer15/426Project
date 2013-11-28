@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
+<link href="css/popup.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/user.js"></script>
 <title>Upload</title>
 </head>
 <body>
