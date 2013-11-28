@@ -8,14 +8,6 @@
 <body>
 <?php
 session_start();
-// Create connection
-$con=mysqli_connect("classroom.cs.unc.edu","danfiza","comp426daneli","danfizadb");
-
-// Check connection
-if (mysqli_connect_errno($con))
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
 ?>
 <div class="main">
 <?php include("scripts/header.php"); ?>

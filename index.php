@@ -4,16 +4,15 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
 	<link href="css/lightbox.css" rel="stylesheet" />
+	<link href="css/popup.css" rel="stylesheet" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	<script src="js/lightbox-2.6.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/user.js"></script>
 	<title>UNC Images</title>
 </head>
 <body>
-	<?php
-	session_start();
-	?>
 	<div class="main">
-		<?php include("scripts/header.php"); ?>
+		<?php session_start(); include("scripts/header.php"); ?>
 		<div class="mainContent">
 			<div id="imageScroll">
 			</div><!-- imageScroll -->
