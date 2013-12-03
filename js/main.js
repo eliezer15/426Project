@@ -11,6 +11,7 @@ $(document).ready(function() {
 			var lblink = $('<a href="' + obj1[i].path +'" data-lightbox="image-1" title="By: '+  obj1[i].author +'"></a>');
 			lblink.append('<img src="'+ obj1[i].path +'" alt="image">');
 			new_imagediv.append(lblink);
+            new_imagediv.append('<a class="comment_link" href="">Comment</a>');
 			new_imagediv.append('<br><img class ="thumbup" src="img/thumbup.png" alt="thumbup"><img class ="thumbdn" src="img/thumbdown.png" alt="thumbdown"><span class="up">'+obj1[i].upvotes+'</span><span class="dn">'+obj1[i].downvotes+'</span>');
 			imageScroll.append(new_imagediv);
 			
