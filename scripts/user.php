@@ -42,6 +42,7 @@ if($type === "login"){
 			$_SESSION['username'] = $row['login'];
 			$_SESSION['login'] = "true";
 			$_SESSION['id'] = $row['id'];
+            $_SESSION['profilepic'] = $row['profilepic'];
 			$resp->logged = true;
 		} else{
 			$resp->logged = false;
