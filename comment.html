@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/comment.css">
+<link rel="stylesheet" type="text/css" href="css/mystylesheet.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/objects/Comment.js"></script>
+    <script src="js/comment.js"></script>
+<title>Comments</title>
+</head>
+<body>
+
+<div class="main">
+
+	<div class="logo">
+		<h1> Tar Heel Gallery </h1>
+	</div><!-- logo place holder -->
+
+<div class = "header">
+    <div class ="menu">
+    	<ul>
+    	<li><a href="index.html">home</a></li>
+    	<li><a href="about.html">about</a></li>
+    	<li><a href="">galleries</a></li>
+    	</ul>
+	</div><!-- Menu-->
+</div><!--Header -->
+
+<div class="mainContent">
+    <div id="picture">
+		<img src="" alt="campus">
+    </div> <!--picture-->
+
+    <div id="picture_info">
+<!--        <img id="user_profile_picture" src ="profile.jpg" alt="profile"> -->
+        <span id="user_name"></span>
+        <br><br><br><br>
+        <p id="picture_description"></p>
+    </div><!--picture_info-->
+
+    <div id="picture_comments">
+        <span> Leave a comment </span><br>
+        <div id="add_comment" contenteditable></div>
+        <ul id="comment_list">
+        </ul>
+    </div><!--picture_comments-->
+
+</div><!--mainContent-->
+
+<div class="footer">
+	<p> Copyright </p>
+</div><!--footer-->
+</div> <!--main-->	
+</body>
+</html>
