@@ -1,46 +1,51 @@
-#backgroundPopup {
-    z-index:1;
-    position: fixed;
-    display:none;
-    height:100%;
-    width:100%;
-    background:#000000;
-    top:0px;
-    left:0px;
+/* 
+	author: istockphp.com
+*/
+#backgroundPopup_comment { 
+	z-index:1;
+	position: fixed;
+	display:none;
+	height:100%;
+	width:100%;
+	background:#000000;	
+	top:0px;  
+	left:0px;
 }
-#toPopup {
-    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+#toPopup_comment {
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
     background: none repeat scroll 0 0 #FFFFFF;
     border: 10px solid #ccc;
     border-radius: 3px 3px 3px 3px;
     color: #333333;
     display: none;
-    font-size: 14px;
-    left: 50%;
+	font-size: 14px;
+    left: 39%;
     margin-left: -402px;
     position: fixed;
-    top: 20%;
-    width: 800px;
+    top: 10%;
+    width: 1070px;
+    height: 500px;
     z-index: 2;
 }
 div.loader {
     background: url("../img/loading.gif") no-repeat scroll 0 0 transparent;
     height: 32px;
     width: 32px;
-    display: none;
-    z-index: 9999;
-    top: 40%;
-    left: 50%;
-    position: absolute;
-    margin-left: -10px;
+	display: none;
+	z-index: 9999;
+	top: 40%;
+	left: 50%;
+	position: absolute;
+	margin-left: -10px;
 }
 div.close {
-    background: url("../img/close.png") no-repeat scroll 0 0 transparent;
+    background: url("../img/closebox.png") no-repeat scroll 0 0 transparent;
+    bottom: 24px;
     cursor: pointer;
+    float: right;
     height: 30px;
-    position: absolute;
-    right: -27px;
-    top: -24px;
+    left: 27px;
+    position: relative;
     width: 30px;
 }
 span.ecs_tooltip {
@@ -71,12 +76,4 @@ span.arrow {
 }
 div#popup_content {
     margin: 4px 7px;
-    /* remove this comment if you want scroll bar
-    overflow-y:scroll;
-    height:200px
-    */
-}
-
-#warning{
-color: red;
 }

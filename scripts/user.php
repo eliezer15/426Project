@@ -42,6 +42,12 @@ if($type === "login"){
 			$_SESSION['username'] = $row['login'];
 			$_SESSION['login'] = "true";
 			$_SESSION['id'] = $row['id'];
+
+            /* for profilepic, pass the picture object */
+            $profile_picture_id = $row['profilepic'];
+            $result = mysqli_query($con, "select * from Picture where id=".$profile_picture_id.";");   
+            $profile_pic = mysqli_fetch_object($result);
+            $_SESSION['profilepic'] = $profile_pic;
 			$resp->logged = true;
 		} else{
 			$resp->logged = false;

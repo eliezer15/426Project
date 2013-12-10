@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+.helper {
+    display:inline-block;
+    height: 100%;
+    vertical-align:middle;
+}
+
+div #picture { 
+	width:70%; 
+	background-color:Black;  
+	height:490px;
+	float:left;
+	position:relative;
+}
+
+div#picture img {
+    display:block;
+    margin-left:auto;
+    margin: auto;
+	position:absolute;
+    max-height: 100%;
+    max-width:100%;
+	top:0; left: 0; bottom: 0; right: 0;
+}
+
+div#picture_info { 
+	float: left;
+	width: 300px; 
+	background-color:White; 
+	height:100px;
+	padding-left: 10px;
+}
+
+.user_profile_picture {
+	display: block;
+	float: left;
+	margin-right: 10px;
+	height: 32px;
+	width: 32px;
+}
+
+div#picture_info #user_name {
+	font-weight: bold;
+}
+
+div#picture_info #picture_description {
+}
+	
+div#picture_comments { 
+	width:305px; 
+	background-color:White; 
+	float:left; 
+	height:250px; 
+	padding-top: 15px;
+	padding-left: 10px;
+}	
+
+div[contenteditable] {
+	border: 1px solid black;
+	max-height: 100px;
+	overflow: auto;
+}						
+
+#comment_list_div {
+    overflow-y:scroll;
+    margin-top:15px;
+    height:315px;
+}
+
+#comment_list {
+	list-style: none;
+    padding: 0;
+}
+
+#comment_list li {
+	padding-bottom: 5px;
+
+}
+
+.comments {
+	list-style:none;
+}
+
+.comments li {
+	font-family: Georgia;
+	color: #FFFFFF;
+	font-size: 1em;
+	padding: 5px;
+}
+	

@@ -11,7 +11,7 @@ $(document).ready(function() {
 			var lblink = $('<a href="' + obj1[i].path +'" data-lightbox="image-1" title="By: '+  obj1[i].author +'"></a>');
 			lblink.append('<img src="'+ obj1[i].path +'" alt="image">');
 			new_imagediv.append(lblink);
-            new_imagediv.append('<a class="comment_link" href="">Comment</a>');
+            new_imagediv.append('<a class="comment_link" href="#">Comment</a>');
 			new_imagediv.append('<br><img class ="thumbup" src="img/thumbup.png" alt="thumbup"><img class ="thumbdn" src="img/thumbdown.png" alt="thumbdown"><span class="up">'+obj1[i].upvotes+'</span><span class="dn">'+obj1[i].downvotes+'</span>');
 			imageScroll.append(new_imagediv);
 			
@@ -20,29 +20,35 @@ $(document).ready(function() {
 	}});
 	
 	imageScroll.on('click', 'img.thumbup', function(event){
-		var parent= $(this).parent().attr("class");
-		var data= {picture: parent, vote: "up"};
-		$.post('scripts/voting.php', data, function(returnedData) {
-			console.log(returnedData);
+        var picture_id= $(this).parent().attr("class");
+		var sibling = $(this).siblings("span.up");
+        var data= {picture: picture_id, vote: "up"};
+
+		$.post('scripts/voting.php', data, function(returnedData) { 
+            if (returnedData.success) {
+		        var thumbup = sibling.html();
+		        thumbup++;
+		        sibling.html(thumbup).fadeIn("slow");
+           }
 		});
 		
-		var thumbup = $(this).siblings("span.up").html();
-		thumbup++;
-		$(this).siblings("span.up").html(thumbup).fadeIn("slow");
 		
 		
 	});
 
 	imageScroll.on('click', 'img.thumbdn', function(event){
-		var parent= $(this).parent().attr("class");
-		var data= {picture: parent, vote: "down"};
-		$.post('scripts/voting.php', data, function(returnedData) {
-			console.log(returnedData);
-		});
+		/*have to store 'this' because we lose reference to it inside the post ajax call */
+        var picture_id= $(this).parent().attr("class");
+		var sibling = $(this).siblings("span.dn");
+		var data= {picture: picture_id, vote: "down"};
 		
-		var thumbdown = $(this).siblings("span.dn").html();
-		thumbdown++;
-		$(this).siblings("span.dn").html(thumbdown).fadeIn("slow");
+        $.post('scripts/voting.php', data, function(returnedData) {
+		    if (returnedData.success) {
+                var thumbdown = sibling.html();
+		        thumbdown++;
+		        sibling.html(thumbdown).fadeIn("slow");
+		    }
+		});
 		
 	});
 });

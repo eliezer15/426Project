@@ -1,0 +1,4 @@
+- On comment.js, find why all picture id's are 4. It seems that picture_id is not being read as a global variable
+- Make sure comments are being saved and retrieved properly.
+- After this, on
+
