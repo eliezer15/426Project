@@ -11,6 +11,7 @@
     <script src="js/lightbox-2.6.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/comment.js"></script>
+	<script src="js/Comment.js"></script>
 	<script src="js/user.js"></script>
 	<title>UNC Images</title>
 </head>

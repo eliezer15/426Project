@@ -32,7 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     if (isset($_REQUEST['delete'])) {
       $comment->delete();
       header("Content-type: application/json");
+<<<<<<< HEAD
+      print(json_encode($picture));
+=======
       print(json_encode(true));
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
       exit();
     } 
 

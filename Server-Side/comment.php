@@ -43,7 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     
     $author_id = $comment->getauthor();
     $user = User::findByID($author_id);
+<<<<<<< HEAD
+    $comment->setauthor(json_encode($user));
+=======
     $comment->setauthor($user->getJSON());
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
     
     /*
     <script>

@@ -44,7 +44,11 @@ class Picture {
 
       $picture = $result->fetch_array();
       $uploaded = new DateTime($picture['uploaded']);
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
       return new Picture(intval($picture['id']),
 		                        $picture['path'],
 		                        $uploaded,
@@ -178,6 +182,10 @@ class Picture {
     $uploaded = $this->uploaded->format('Y-m-d');
     
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
     $json_obj = array('id' => $this->id,
 		      'path' => $this->path,
 		      'profile' => $this->profile,

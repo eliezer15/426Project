@@ -16,7 +16,11 @@ $(document).ready(function() {
                         <img src="" alt="campus">\
                     </div> <!--picture-->\
                     <div id="picture_info">\
+<<<<<<< HEAD
+                        <img id="description_user_profile_picture" class="user_profile_picture" src ="" alt="profile"> \
+=======
                 <!--        <img id="user_profile_picture" src ="profile.jpg" alt="profile"> -->\
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
                         <span id="user_name"></span>\
                         <br><br><br><br>\
                         <p id="picture_description"></p>\
@@ -42,6 +46,25 @@ $(document).ready(function() {
         $.ajax(url_base + "/picture.php/" + picture_id,
             {type: "GET",
              dataType:"json",
+<<<<<<< HEAD
+            }).done(function(picture) {
+                $('#picture img').attr("src",picture.path);
+                $('#user_name').text(picture.author);
+                $('#picture_description').text(picture.description);
+
+                $.ajax(url_base+"/user.php/"+picture.author,
+                {type: "GET",
+                 dataType: "json",
+                 success:function(user, status, jqXHR) {
+                            console.log(user);
+                            $('#description_user_profile_picture').attr("src", user.profilepic.path);
+                        },
+                 error:function(jqXHR, status, error){console.log(error);}
+
+                });
+            });
+        
+=======
              success: function(picture, status, jqXHR) {
                 $('#picture img').attr("src",picture.path);
                 $('#user_name').text(picture.author);
@@ -51,6 +74,7 @@ $(document).ready(function() {
                         console.log(error);
              }
          });
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
         
         /* Now do a call for the comments, and attach it one by one */
         /* clear the list before attaching new comments */
@@ -108,7 +132,10 @@ $(document).ready(function() {
                              dataType: "json",
                              data: comment,
                              success: function(comment_json, status, jqXHR) {
+<<<<<<< HEAD
+=======
                                         console.log(comment);
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
                                         var c = new Comment(comment);
                                         $('#comment_list').append(c.makeCommentDiv());
                                       },

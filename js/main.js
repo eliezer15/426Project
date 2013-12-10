@@ -20,29 +20,35 @@ $(document).ready(function() {
 	}});
 	
 	imageScroll.on('click', 'img.thumbup', function(event){
-		var parent= $(this).parent().attr("class");
-		var data= {picture: parent, vote: "up"};
-		$.post('scripts/voting.php', data, function(returnedData) {
-			console.log(returnedData);
+        var picture_id= $(this).parent().attr("class");
+		var sibling = $(this).siblings("span.up");
+        var data= {picture: picture_id, vote: "up"};
+
+		$.post('scripts/voting.php', data, function(returnedData) { 
+            if (returnedData.success) {
+		        var thumbup = sibling.html();
+		        thumbup++;
+		        sibling.html(thumbup).fadeIn("slow");
+           }
 		});
 		
-		var thumbup = $(this).siblings("span.up").html();
-		thumbup++;
-		$(this).siblings("span.up").html(thumbup).fadeIn("slow");
 		
 		
 	});
 
 	imageScroll.on('click', 'img.thumbdn', function(event){
-		var parent= $(this).parent().attr("class");
-		var data= {picture: parent, vote: "down"};
-		$.post('scripts/voting.php', data, function(returnedData) {
-			console.log(returnedData);
-		});
+		/*have to store 'this' because we lose reference to it inside the post ajax call */
+        var picture_id= $(this).parent().attr("class");
+		var sibling = $(this).siblings("span.dn");
+		var data= {picture: picture_id, vote: "down"};
 		
-		var thumbdown = $(this).siblings("span.dn").html();
-		thumbdown++;
-		$(this).siblings("span.dn").html(thumbdown).fadeIn("slow");
+        $.post('scripts/voting.php', data, function(returnedData) {
+		    if (returnedData.success) {
+                var thumbdown = sibling.html();
+		        thumbdown++;
+		        sibling.html(thumbdown).fadeIn("slow");
+		    }
+		});
 		
 	});
 });

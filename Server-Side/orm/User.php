@@ -10,7 +10,11 @@ class User {
   private $created;
   private $profilepic;
     
+<<<<<<< HEAD
+  /*AS of now, I only need this class to retrieve users, not create them, so I won't need this*/
+=======
   /* AS of now, I only need this class to retrieve users, not create them, so I won't need this 
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
 
   public static function create($id, $first, $last, $username, $password, $email, $created, $profilepic) {
     $mysqli = new mysqli("classroom.cs.unc.edu", "danfiza", "comp426daneli", "danfizadb");
@@ -33,17 +37,48 @@ class User {
     return null;
   }
 
+<<<<<<< HEAD
+  
+
+  public static function findByID($id) {
+    /* This method can get user by a numerical id or by a uniquer user login */
+    $query = "";
+
+    if (is_numeric($id)) 
+        $query = "select * from User where id=".$id;
+    else
+        $query = "select * from User where login='".$id."';";
+    
+    $mysqli = new mysqli("classroom.cs.unc.edu", "danfiza", "comp426daneli", "danfizadb");
+    
+    $result = $mysqli->query($query);
+=======
   */
 
   public static function findByID($id) {
     $mysqli = new mysqli("classroom.cs.unc.edu", "danfiza", "comp426daneli", "danfizadb");
 
     $result = $mysqli->query("select * from User where id = " . $id);
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
     
     if ($result) {
       if ($result->num_rows == 0) {
 	      return null;
       }
+<<<<<<< HEAD
+        
+      /* get profile pic object */
+      $user = $result->fetch_object();
+      $date = $user->created;
+      $user->created = new DateTime($date);
+        
+      /* get profile picture object */
+
+      $result = $mysqli->query("select * from Picture where id=".intval($user->profilepic).";");
+      $user->profilepic = mysqli_fetch_object($result);
+          
+       return $user; 
+=======
 
       $user = $result->fetch_array();
       $created = new DateTime($user['created']);
@@ -55,13 +90,18 @@ class User {
                                 $user['email'],
 		                        $created,
 		                        intval($user['profilepic']));
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
     }
 
     return null;
   }
   
+<<<<<<< HEAD
+ 
+=======
   /* Won't be needed for now
 
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
   public static function getAllIDs() {
     $mysqli = new mysqli("classroom.cs.unc.edu", "danfiza", "comp426daneli", "danfizadb");
 
@@ -76,12 +116,20 @@ class User {
 
     return $id_array;
   }
+<<<<<<< HEAD
+  
+  private function __construct($id, $first, $last, $username, $email, $created, $profilepic) {
+    $this->id = $id;
+    $this->first = $first;
+    $this->last = $last; 
+=======
   */
 
   private function __construct($id, $first, $last, $username, $email, $created, $profilepic) {
     $this->id = $id;
     $this->first = $first;
     $this->last = $last;
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
     $this->username = $username;
     $this->email = $email;
     $this->created = $created;
@@ -196,4 +244,7 @@ class User {
     return json_encode($json_obj);
   }
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 88befbd4ead96c5066a2a2cb4651151085c06a3f
