@@ -18,8 +18,9 @@
 	<div class="main">
 		<?php session_start(); include("scripts/header.php"); ?>
 		<div class="mainContent">
-			<div id="imageScroll">
-			</div><!-- imageScroll -->    
+			<div id="Content">
+			hefhfa
+			</div><!-- Content -->    
 		</div><!--mainContent-->
 		<div class="footer">
 		</div><!--footer-->
